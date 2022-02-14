@@ -1,0 +1,2 @@
+# CriptoStatApp
+Cripto statistic app
