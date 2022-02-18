@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
 
-import 'package:cripto_stat_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import 'feature/presentation/pages/home_page.dart';
 
 void main() {
   runApp(MyApp());
