@@ -1,10 +1,10 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:cripto_stat_app/bloc/coin_bloc.dart';
 import 'package:cripto_stat_app/services/coin_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../bloc/coin_bloc.dart';
 import '../widgets/coins_list.dart';
 import '../widgets/filter_buttons.dart';
 

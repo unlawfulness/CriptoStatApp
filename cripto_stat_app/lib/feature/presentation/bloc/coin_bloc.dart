@@ -1,9 +1,11 @@
-import 'package:cripto_stat_app/bloc/coin_event.dart';
-import 'package:cripto_stat_app/bloc/coin_state.dart';
+
 import 'package:cripto_stat_app/services/coin_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../models/coin.dart';
+import 'coin_event.dart';
+import 'coin_state.dart';
+import '../../data/models/coin.dart';
+
 
 class CoinBloc extends Bloc<CoinEvent, CoinState>{
   CoinRepository coinRepository;
