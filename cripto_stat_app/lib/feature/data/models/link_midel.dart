@@ -22,27 +22,36 @@ class LinksModel extends LinksEntity {
 
   factory LinksModel.fromJson(Map<String, dynamic> json) {
     return LinksModel(
-        homepage: (json['links']['homepage'] as List<dynamic>)
+        homepage: (json['homepage'] as List<dynamic>)
             .map((e) => e as String)
             .toList(),
-        blockchain_site: (json['links']['blockchain_site'] as List<dynamic>)
+        blockchain_site: (json['blockchain_site'] as List<dynamic>)
             .map((e) => e as String)
             .toList(),
         official_forum_url:
-            (json['links']['official_forum_url'] as List<dynamic>)
+            (json['official_forum_url'] as List<dynamic>)
                 .map((e) => e as String)
                 .toList(),
-        github: (json['links']['repos_url']['github'] as List<dynamic>)
+        github: (json['repos_url']['github'] as List<dynamic>)
             .map((e) => e as String)
             .toList(),
-        twitter_screen_name: json['links']['twitter_screen_name'],
-        facebook_username: json['links']['facebook_username'],
-        telegram_channel_identifier: json['links']
+        twitter_screen_name: json['twitter_screen_name'],
+        facebook_username: json['facebook_username'],
+        telegram_channel_identifier: json
             ['telegram_channel_identifier'],
-        subreddit_url: json['links']['subreddit_url']);
+        subreddit_url: json['subreddit_url']);
   }
 
-  Map<String, dynamic> toJson(){
-    
+  Map<String, dynamic> toJson() {
+    return {
+      'homepage': homepage,
+      'blockchain_site': blockchain_site,
+      'official_forum_url': official_forum_url,
+      'github': github,
+      'twitter_screen_name': twitter_screen_name,
+      'facebook_username': facebook_username,
+      'telegram_channel_identifier': telegram_channel_identifier,
+      'subreddit_url': subreddit_url
+    };
   }
 }
