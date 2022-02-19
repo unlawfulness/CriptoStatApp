@@ -7,11 +7,11 @@ import 'coin_state.dart';
 import '../../data/models/coin_model.dart';
 
 
-class CoinBloc extends Bloc<CoinEvent, CoinState>{
+class CoinBloc extends Bloc<CoinEvent, CoinSearchState>{
   CoinRepository coinRepository;
   CoinBloc(this.coinRepository) : super(CoinEmptyState());
   @override
-  Stream<CoinState> mapEventToState(CoinEvent event) async*{
+  Stream<CoinSearchState> mapEventToState(CoinEvent event) async*{
     if (event is CloinLoadEvent){
       yield CoinLoadingState();
       try {

@@ -1,12 +1,12 @@
-abstract class CoinState{}
+abstract class CoinSearchState{}
 
-class CoinEmptyState extends CoinState{}
+class CoinEmptyState extends CoinSearchState{}
 
-class CoinLoadingState extends CoinState{}
+class CoinLoadingState extends CoinSearchState{}
 
-class CoinLoadedState extends CoinState{
+class CoinLoadedState extends CoinSearchState{
   List<dynamic> loadedCoin;
   CoinLoadedState({required this.loadedCoin}) : assert(loadedCoin!=null);
 }
 
-class CoinErrorState extends CoinState{}
+class CoinErrorState extends CoinSearchState{}

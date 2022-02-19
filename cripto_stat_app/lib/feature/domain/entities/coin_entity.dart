@@ -6,43 +6,42 @@ class CoinEntity extends Equatable {
   String id;
   String symbol;
   String name;
-  String hashing_algorithm;
-  String image;
-  LinksEntity links;
+  String supply;
+  String maxSupply;
+  String marketCapUsd;
+  String volumeUsd24Hr;
+  String priceUsd;
+  String changePercent24Hr;
+  String vwap24Hr;
 
   CoinEntity({
     required this.id,
     required this.symbol,
     required this.name,
-    required this.hashing_algorithm,
-    required this.image,
-    required this.links,
+    required this.supply,
+    required this.maxSupply,
+    required this.marketCapUsd,
+    required this.volumeUsd24Hr,
+    required this.priceUsd,
+    required this.changePercent24Hr,
+    required this.vwap24Hr,
   });
-
+ 
   @override
-  List<Object?> get props =>
-      [id, symbol, name, hashing_algorithm, image, links];
+  List<Object> get props {
+    return [
+      id,
+      symbol,
+      name,
+      supply,
+      maxSupply,
+      marketCapUsd,
+      volumeUsd24Hr,
+      priceUsd,
+      changePercent24Hr,
+      vwap24Hr,
+    ];
+  }
 }
 
-class LinksEntity {
-  List<String> homepage;
-  List<String> blockchain_site;
-  List<String> official_forum_url;
-  List<String> github;
 
-  String twitter_screen_name;
-  String facebook_username;
-  String telegram_channel_identifier;
-  String subreddit_url;
-
-  LinksEntity({
-    required this.homepage,
-    required this.blockchain_site,
-    required this.official_forum_url,
-    required this.github,
-    required this.twitter_screen_name,
-    required this.facebook_username,
-    required this.telegram_channel_identifier,
-    required this.subreddit_url,
-  });
-}
