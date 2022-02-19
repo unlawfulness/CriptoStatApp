@@ -1,8 +1,5 @@
 import 'package:cripto_stat_app/core/error/exception.dart';
 import 'package:cripto_stat_app/feature/data/models/coin_model.dart';
-import 'package:cripto_stat_app/feature/domain/usecases/get_all_coins.dart';
-import 'package:cripto_stat_app/feature/domain/usecases/search_coin.dart';
-import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -19,11 +16,11 @@ class CoinRemoteDataSourceImpl implements CoinRemoteDataSource {
   Future<List<CoinModel>> getAllCoins(int page) async {
     var limit = 20;
     var offset = page * limit;
-    return _getCoinFromUrl('api.coincap.io/v2/assets?limit=$limit&offset=$offset');
+    return _getCoinFromUrl('https://api.coincap.io/v2/assets?limit=$limit&offset=$offset');
   }
 
   @override
-  Future<List<CoinModel>> searchCoin(String query) async => _getCoinFromUrl('api.coincap.io/v2/assets?search=$query');
+  Future<List<CoinModel>> searchCoin(String query) async => _getCoinFromUrl('https://api.coincap.io/v2/assets?search=$query');
 
   Future<List<CoinModel>> _getCoinFromUrl(String url) async{
     final http.Client client;

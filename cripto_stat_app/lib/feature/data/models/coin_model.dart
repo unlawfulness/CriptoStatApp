@@ -35,7 +35,7 @@ class CoinModel extends CoinEntity {
         symbol: json['symbol'],
         name: json['name'],
         supply: json['supply'],
-        maxSupply: json['maxSupply'],
+        maxSupply: json['maxSupply'] ?? '',
         marketCapUsd: json['marketCapUsd'],
         volumeUsd24Hr: json['volumeUsd24Hr'],
         priceUsd: json['priceUsd'],

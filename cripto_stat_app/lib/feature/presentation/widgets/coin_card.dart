@@ -19,22 +19,24 @@ class CoinCard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            SizedBox(width: 3),
             Flexible(
               flex: 1,
               child: Container(
                   child: Text(
                 coin.rank,
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(fontSize: 17, color: Colors.black),
               )),
             ),
             Flexible(
                 flex: 3,
                 child: Container(
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(coin.name,
                           style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold)),
+                              fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black)),
                       Text(coin.symbol,
                           style: TextStyle(fontSize: 14, color: Colors.grey))
                     ],
@@ -44,7 +46,7 @@ class CoinCard extends StatelessWidget {
                 flex: 1,
                 child: Container(
                     child: Text('\$${coin.priceUsd}',
-                        style: TextStyle(fontSize: 16)))),
+                        style: TextStyle(fontSize: 16, color: Colors.black)))),
             Flexible(
                 flex: 1,
                 child: Container(
