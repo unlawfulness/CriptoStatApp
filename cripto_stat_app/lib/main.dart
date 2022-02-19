@@ -30,13 +30,5 @@ class MyApp extends StatelessWidget {
                 scaffoldBackgroundColor: AppColors.mainBacground),
             title: 'Coin stat',
             home: HomePage()));
-    // return MaterialApp(
-    //     theme: ThemeData(
-    //       primaryColor: Colors.blue,
-    //       colorScheme:
-    //           ColorScheme.fromSwatch().copyWith(secondary: Colors.blueAccent),
-    //     ),
-    //     title: 'Demo app provider',
-    //     home: HomePage());
   }
 }
