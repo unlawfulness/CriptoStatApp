@@ -5,6 +5,7 @@ import 'package:cripto_stat_app/feature/domain/entities/coin_entity.dart';
 class CoinModel extends CoinEntity {
   CoinModel(
       {required String id,
+      required String rank,
       required String symbol,
       required String name,
       required String supply,
@@ -16,6 +17,7 @@ class CoinModel extends CoinEntity {
       required String vwap24Hr})
       : super(
             id: id,
+            rank: rank,
             symbol: symbol,
             name: name,
             supply: supply,
@@ -29,6 +31,7 @@ class CoinModel extends CoinEntity {
   factory CoinModel.fromJson(Map<String, dynamic> json) {
     return CoinModel(
         id: json['id'],
+        rank: json['rank'],
         symbol: json['symbol'],
         name: json['name'],
         supply: json['supply'],
@@ -43,6 +46,7 @@ class CoinModel extends CoinEntity {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
+      'rank': rank,
       'symbol': symbol,
       'name': name,
       'supply': supply,
