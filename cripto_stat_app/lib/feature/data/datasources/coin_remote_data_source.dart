@@ -12,7 +12,9 @@ abstract class CoinRemoteDataSource {
 }
 
 class CoinRemoteDataSourceImpl implements CoinRemoteDataSource {
+  final http.Client client;
 
+  CoinRemoteDataSourceImpl({required this.client});
   @override
   Future<List<CoinModel>> getAllCoins(int page) async {
     var limit = 20;
