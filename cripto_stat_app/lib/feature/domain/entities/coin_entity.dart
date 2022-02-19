@@ -4,6 +4,7 @@ import 'package:equatable/equatable.dart';
 
 class CoinEntity extends Equatable {
   String id;
+  String rank;
   String symbol;
   String name;
   String supply;
@@ -16,6 +17,7 @@ class CoinEntity extends Equatable {
 
   CoinEntity({
     required this.id,
+    required this.rank,
     required this.symbol,
     required this.name,
     required this.supply,
@@ -31,6 +33,7 @@ class CoinEntity extends Equatable {
   List<Object> get props {
     return [
       id,
+      rank,
       symbol,
       name,
       supply,
