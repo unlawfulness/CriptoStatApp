@@ -50,7 +50,10 @@ class CoinsList extends StatelessWidget {
           },
           separatorBuilder: (context, index) {
             return const Divider(
-              color: Colors.grey,
+              color: Colors.white,
+              thickness: 5,
+              height: 10,
+
             );
           },
           itemCount: coins.length + (isLoading ? 1 : 0));
