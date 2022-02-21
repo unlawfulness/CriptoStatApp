@@ -5,7 +5,7 @@ import 'package:cripto_stat_app/feature/presentation/bloc/coin_list_cubit/coin_l
 import 'package:cripto_stat_app/feature/presentation/bloc/search_bloc/search_block.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'feature/presentation/pages/home_page.dart';
+import 'feature/presentation/pages/coin_list_screen.dart';
 import 'locator_service.dart' as di;
 
 void main() async {
@@ -29,6 +29,6 @@ class MyApp extends StatelessWidget {
                 backgroundColor: AppColors.mainBacground,
                 scaffoldBackgroundColor: AppColors.mainBacground),
             title: 'Coin stat',
-            home: HomePage()));
+            home: CoinListPage()));
   }
 }

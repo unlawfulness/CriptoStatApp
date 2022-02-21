@@ -1,5 +1,5 @@
-import 'package:cripto_stat_app/common/app_colors.dart';
 import 'package:cripto_stat_app/feature/domain/entities/coin_entity.dart';
+import 'package:cripto_stat_app/feature/presentation/pages/coin_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class CoinCard extends StatelessWidget {
@@ -14,79 +14,49 @@ class CoinCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color changeColor =
         (double.parse(coin.changePercent24Hr) > 0) ? Colors.green : Colors.red;
-    return Card(
-      margin: EdgeInsets.all(5),
-      child: ListTile(
-          textColor: Colors.white,
-          leading: Text(
-            coin.rank,
-            style: TextStyle(fontSize: 17, color: Colors.white),
-            textAlign: TextAlign.center,
-          ),
-          title: Text(coin.name,
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
-              textAlign: TextAlign.start),
-          subtitle: Text(coin.symbol,
-              style: TextStyle(fontSize: 14, color: Colors.grey),
-              textAlign: TextAlign.start),
-          trailing: Container(
-              child: Text('\$${getNumber(coin.priceUsd, precision: 2)}',
-                  style: TextStyle(fontSize: 16, color: Colors.white),
-                  textAlign: TextAlign.start))),
-    );
 
-    // Container(
-    //     decoration: BoxDecoration(
-    //         color: AppColors.cellBacground,
-    //         borderRadius: BorderRadius.circular(5)),
-    //     child: Row(
-    //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //       children: [
-    //         SizedBox(width: 3),
-    //         Flexible(
-    //           flex: 1,
-    //           child: Container(
-    //               child: Text(
-    //             coin.rank,
-    //             style: TextStyle(fontSize: 17, color: Colors.black),
-    //             textAlign: TextAlign.left,
-    //           )),
-    //         ),
-    //         Flexible(
-    //             flex: 3,
-    //             child: Container(
-    //               child: Column(
-    //                 mainAxisAlignment: MainAxisAlignment.start,
-    //                 children: [
-    //                   Text(coin.name,
-    //                       style: TextStyle(
-    //                           fontSize: 16,
-    //                           fontWeight: FontWeight.bold,
-    //                           color: Colors.black),
-    //                       textAlign: TextAlign.start),
-    //                   Text(coin.symbol,
-    //                       style: TextStyle(fontSize: 14, color: Colors.grey),
-    //                       textAlign: TextAlign.start)
-    //                 ],
-    //               ),
-    //             )),
-    //         Flexible(
-    //             flex: 1,
-    //             child: Container(
-    //                 child: Text('\$${getNumber(coin.priceUsd, precision: 2)}',
-    //                     style: TextStyle(fontSize: 16, color: Colors.black),
-    //                     textAlign: TextAlign.start))),
-    //         Flexible(
-    //             flex: 1,
-    //             child: Container(
-    //                 child: Text(
-    //                     '${getNumber(coin.changePercent24Hr, precision: 2)}%',
-    //                     style: TextStyle(fontSize: 16, color: changeColor),
-    //                     textAlign: TextAlign.start))),
-    //       ],
-    //     ));
+    return GestureDetector(
+      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => CoinDetailPage(coin: coin))),
+      child: Card(
+          margin: const EdgeInsets.all(5),
+          elevation: 1,
+          child: Row(children: [
+            Expanded(
+              flex: 1,
+              child: Text(
+                coin.rank,
+                style: const TextStyle(fontSize: 16, color: Colors.black),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Expanded(
+              flex: 3,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(coin.name,
+                      style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                      textAlign: TextAlign.left),
+                  Text(coin.symbol,
+                      style: const TextStyle(fontSize: 14, color: Colors.grey),
+                      textAlign: TextAlign.left)
+                ],
+              ),
+            ),
+            Expanded(
+                flex: 2,
+                child: Text('\$${getNumber(coin.priceUsd, precision: 2)}',
+                    style: const TextStyle(fontSize: 16, color: Colors.black),
+                    textAlign: TextAlign.left)),
+            Expanded(
+                flex: 1,
+                child: Text('${getNumber(coin.changePercent24Hr, precision: 2)}%',
+                    style: TextStyle(fontSize: 16, color: changeColor),
+                    textAlign: TextAlign.left)),
+          ])),
+    );
   }
 }

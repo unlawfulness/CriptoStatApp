@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../widgets/coins_list.dart';
 import '../widgets/filter_buttons.dart';
 
-class HomePage extends StatelessWidget {
+class CoinListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
